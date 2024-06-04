@@ -10,7 +10,7 @@ export default function Header() {
         <div className='h-5 bg-black'></div>
         <div className='h-16 bg-white drop-shadow-lg flex justify-between'>
             <Tray className={`justify-start items-center h-full`}>
-                <BiSolidCircle className='ml-10 text-black text-xs'/>
+                <BiSolidCircle className='ml-7 text-black text-xs'/>
                 <Text className={`text-black select-none text-xl font-bold h-full px-3 flex justify-center items-center  border-black border-opacity-15`}> v </Text>
                 <BiSolidCircle className='text-black text-xs'/>
             </Tray>

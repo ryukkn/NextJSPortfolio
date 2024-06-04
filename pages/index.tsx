@@ -182,9 +182,9 @@ export default function Page() {
             <Container className={`flex`}>
                 <Container className={`flex-[1_1_0%] pt-32 px-12`}>
                     <Text className={`ml-5 text-4xl text-orange-300`}>About Me.</Text>
-                    <Text className={`mt-5 ml-5 text-lg`}>
-                        <span>Hello! I am a fresh graduate from Bicol University looking for an entry-level job as a Full Stack Developer. </span>
-                        <span>I graduated with a Computer Science Degree and I am ready to use my knowledge to solve real-world problems in the stated field. </span>
+                    <Text className={`mt-5 ml-5 text-lg font-thin`}>
+                        <span>Hello! I am a fresh graduate from <span className={`text-blue-400 font-normal`}>Bicol University</span> looking for an entry-level job as a <span className={`text-blue-400 font-normal`}>Full Stack Developer</span>. </span>
+                        <span>I graduated with a <span className={`text-blue-400 font-normal`}>Computer Science Degree</span> and I am ready to use my knowledge to solve real-world problems in the stated field. </span>
                         <span>Throughout my academic journey, I pursued additional projects beyond my curriculum, which contributed to the refinement of my skills as a developer. </span>
                         <span>From software engineering projects, my On-the-Job Training, and freelancing, to getting my provisional contract as a Junior Software Engineer, I have gained enough experience to fulfill my duties as a full-fledged developer. </span>
                         <span>Throughout this journey, I developed the sense of flexibility to engage both sides of Backend and Front-End Development. </span>
