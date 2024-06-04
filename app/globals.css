@@ -16,6 +16,25 @@
   }
 }
 
+
+::-webkit-scrollbar {
+  width: 3px; /* Set the width of the scrollbar */
+}
+::-webkit-scrollbar-track {
+  background-color: #161515;
+}
+
+/* Customize the thumb (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 4px; /* Set the border radius of the thumb */
+}
+
+/* Customize the corner (the area between the vertical and horizontal scrollbars) */
+::-webkit-scrollbar-corner {
+  background-color: #000000;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
