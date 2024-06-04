@@ -183,16 +183,16 @@ export default function Page() {
                 <Container className={`flex-[1_1_0%] pt-32 px-12`}>
                     <Text className={`ml-5 text-4xl text-orange-300`}>About Me.</Text>
                     <Text className={`mt-5 ml-5 text-lg`}>
-                        <span>Hello! I am a fresh graduate from Bicol University looking for an entry level job as a Full Stack Developer. </span>
-                        <span>I graduated with a Computer Science Degree and I am ready to use my knowledge to solve real world problems in the stated field. </span>
-                        <span>While being able to stay on track with my curriculum, I also worked with different projects outside of my curriculum which honed my skills as a developer. </span>
-                        <span>From software engineering projects, my On-the-Job Training, freelancing, to getting my provisional contract as a Junior Software Engineer, I have gained enough experiences to fulfill my duties as a full fledged developer. </span>
-                        <span>Througout this journey, I developed the sense of flexibility to engage both sides of Backend and Front-End Development. </span>
+                        <span>Hello! I am a fresh graduate from Bicol University looking for an entry-level job as a Full Stack Developer. </span>
+                        <span>I graduated with a Computer Science Degree and I am ready to use my knowledge to solve real-world problems in the stated field. </span>
+                        <span>Throughout my academic journey, I pursued additional projects beyond my curriculum, which contributed to the refinement of my skills as a developer. </span>
+                        <span>From software engineering projects, my On-the-Job Training, and freelancing, to getting my provisional contract as a Junior Software Engineer, I have gained enough experience to fulfill my duties as a full-fledged developer. </span>
+                        <span>Throughout this journey, I developed the sense of flexibility to engage both sides of Backend and Front-End Development. </span>
                     </Text>
                     <Text className={`mt-5 ml-5 text-lg`}>
-                        <span>I am looking forward to offer my services as a developer to contribute to more projects, as well as to my future teams. </span>
-                        <span>Aside from my goal to improve the ways of life by the continous development of our technologies, I am also dedicated in sharing my knowledge to guide my colleagues. </span>
-                        <span>I consider these goals as a motivation for continous growth, a never ending learning process that will keep improving my technical and soft skills.</span>
+                        <span>I am looking forward to offering my services as a developer to contribute to more projects, as well as to my future teams. </span>
+                        <span>Aside from my goal to improve the ways of life through the continuous development of our technologies, I am also dedicated to sharing my knowledge to guide my colleagues. </span>
+                        <span>I consider these goals as a motivation for continuous growth, a never-ending learning process that will keep improving my soft and technical skills.</span>
                     </Text>
                 </Container>
                 <Container className={`flex-[1_1_0%]`}></Container>
@@ -205,7 +205,7 @@ export default function Page() {
                     <Container id='projects' className={`mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
                         <Container className={`flex items-center pointer-events-none `}>
                             <FaRegDotCircle className={`mr-5 transition-all ${hoveredExp == 'projects' ? 'text-blue-500' : ''}` }/>
-                            <Text className={`text-xl font-bold w-1/2 `}>
+                            <Text className={`text-xl font-bold w-1/2 ${hoveredExp == 'projects' ? 'text-orange-200' : ''} `}>
                                 <span> Projects </span> <span className="font-thin"> | Bicol University </span>
                             </Text>
                         </Container>
@@ -237,7 +237,7 @@ export default function Page() {
                     <Container id='ojt' className={`mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
                         <Container className={`flex items-center pointer-events-none`}>
                             <FaRegDotCircle className={`mr-5 ${hoveredExp == 'ojt' ? 'text-blue-500' : ''}`}/>
-                            <Text className={`text-xl font-bold w-1/2`}>
+                            <Text className={`text-xl font-bold w-1/2 ${hoveredExp == 'ojt' ? 'text-orange-200' : ''}`}>
                                 <span> On-the-Job Trainee </span> <span className="font-thin"> | OWWA-R5 </span>
                             </Text>
                         </Container>
@@ -270,7 +270,7 @@ export default function Page() {
                     <Container  id='freelance' className={`mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
                         <Container className={`flex items-center pointer-events-none`}>
                             <FaRegDotCircle className={`mr-5 ${hoveredExp == 'freelance' ? 'text-blue-500' : ''}`}/>
-                            <Text className={`text-xl font-bold w-1/2`}>
+                            <Text className={`text-xl font-bold w-1/2 ${hoveredExp == 'freelance' ? 'text-orange-200' : ''}`}>
                                 <span> Freelance Developer </span> <span className="font-thin"> | Local</span>
                             </Text>
                         </Container>
@@ -301,7 +301,7 @@ export default function Page() {
                     <Container  id='upward' className={`mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
                         <Container className={`flex items-center pointer-events-none`}>
                             <FaRegDotCircle className={`mr-5 ${hoveredExp == 'upward' ? 'text-blue-500' : ''}`}/>
-                            <Text className={`text-xl font-bold w-1/2`}>
+                            <Text className={`text-xl font-bold w-1/2 ${hoveredExp == 'upward' ? 'text-orange-200' : ''}`}>
                                 <span> Junior Software Engineer </span> <span className="font-thin"> | Upward Solutions </span>
                             </Text>
                         </Container>
