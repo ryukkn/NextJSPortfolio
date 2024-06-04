@@ -16,27 +16,27 @@ import { FaGithub,FaFacebook,FaLinkedin,FaQuoteLeft, FaQuoteRight, FaRegDotCircl
 export default function Page() {
 
     const iconContents = new Map<String,any>([
-        ['angular' , <p>I've used the <span className=" text-blue-600">Angular Framework</span> for the development of a web-based LMS Project and an E-commerce mobile app built with Ionic.</p>],
-        ['flutter' , <p>For rapid mobile development, I have used the <span className=" text-blue-600">Flutter Framework</span>, integrating machine-learning models, relational and non-relational databases.</p>],
-        ['laravel' , <p>Full Stack developer for a Statistical Performance Reporting System for OWWA-R5 using the <span className=" text-blue-600"> Laravel Framework </span>.</p>],
-        ['next' , <p>This portfolio was built with <span className=" text-blue-600">NextJS</span>.</p>],
-        ['nodejs' , <p>I have used <span className=" text-blue-600">NodeJS</span> to implement server-side file handling, as well as web sockets for real-time communication between the end users.</p>],
-        ['firebase' , <p>I have used <span className="text-blue-600">Firebase</span> as a non-relational database and ready to use websocket for mobile application projects.</p>],
-        ['aws' , <p>Migrated projects from a local server to the cloud with <span className="text-blue-600">Amazon Web Services</span>.</p>],
-        ['gcloud' , <p>Deployed and hosted a project in <span className="text-blue-600">Google Cloud Platform</span>.</p>],
-        ['tailwind' , <p>Utilized <span className="text-blue-600">Tailwind CSS</span> to improve my workflow in structuring and designing web pages.</p>],
-        ['tensorflow' , <p>Built object detection and classification models using <span className="text-blue-600">TensorFlow</span>.</p>],
+        ['angular' , <p key={'angular'}>I've used the <span className=" text-blue-600">Angular Framework</span> for the development of a web-based LMS Project and an E-commerce mobile app built with Ionic.</p>],
+        ['flutter' , <p key={'flutter'}>For rapid mobile development, I have used the <span className=" text-blue-600">Flutter Framework</span>, integrating machine-learning models, relational and non-relational databases.</p>],
+        ['laravel' , <p key={'laravel'}>Full Stack developer for a Statistical Performance Reporting System for OWWA-R5 using the <span className=" text-blue-600"> Laravel Framework </span>.</p>],
+        ['next' , <p  key={'next'}>This portfolio was built with <span className=" text-blue-600">NextJS</span>.</p>],
+        ['nodejs' , <p  key={'nodejs'}>I have used <span className=" text-blue-600">NodeJS</span> to implement server-side file handling, as well as web sockets for real-time communication between the end users.</p>],
+        ['firebase' , <p  key={'firebase'}>I have used <span className="text-blue-600">Firebase</span> as a non-relational database and ready to use websocket for mobile application projects.</p>],
+        ['aws' , <p  key={'aws'}>Migrated projects from a local server to the cloud with <span className="text-blue-600">Amazon Web Services</span>.</p>],
+        ['gcloud' , <p  key={'gcloud'}>Deployed and hosted a project in <span className="text-blue-600">Google Cloud Platform</span>.</p>],
+        ['tailwind' , <p  key={'tailwind'}>Utilized <span className="text-blue-600">Tailwind CSS</span> to improve my workflow in structuring and designing web pages.</p>],
+        ['tensorflow' , <p  key={'tensorflow'}>Built object detection and classification models using <span className="text-blue-600">TensorFlow</span>.</p>],
 
-        ['sql' , <p>Worked with relational databases such as <span className="text-blue-600">PostgreSQL</span> and <span className="text-blue-600">MySQL</span>.</p>],
-        ['php' , <p>Built a secured server-side APIs with <span className="text-blue-600">PHP</span> to fetch and execute SQL queries.</p>],
-        ['python' , <p>Have used <span className="text-blue-600">Python</span> to develop machine learning models with TensorFlow, as well as creating parsers for large excel data.</p>],
+        ['sql' , <p  key={'sql'}>Worked with relational databases such as <span className="text-blue-600">PostgreSQL</span> and <span className="text-blue-600">MySQL</span>.</p>],
+        ['php' , <p  key={'php'}>Built a secured server-side APIs with <span className="text-blue-600">PHP</span> to fetch and execute SQL queries.</p>],
+        ['python' , <p  key={'python'}>Have used <span className="text-blue-600">Python</span> to develop machine learning models with TensorFlow, as well as creating parsers for large excel data.</p>],
 
-        ['ts' , <p>Experienced with <span className="text-blue-600">TypeScript</span>, my main programming language for Angular and NextJS.</p>],
-        ['html' , <p>Knows the <span className="text-blue-600">HTML</span> basics very well.</p>],
-        ['css' , <p>Built web applications with <span className="text-blue-600">CSS</span> before Tailwind CSS.</p>],
-        ['js' , <p><span className="text-blue-600">JavaScript</span> is my little sandbox.</p>],
-        ['c' , <p>Familiar with <span className="text-blue-600">C/C++</span>, the programming language used for our programming fundamentals, data structures and algorithms class.</p>],
-        ['java' , <p>Familiar with <span className="text-blue-600">Java</span>, the programming language used for  our Object-Oriented Programming class.</p>],
+        ['ts' , <p  key={'ts'}>Experienced with <span className="text-blue-600">TypeScript</span>, my main programming language for Angular and NextJS.</p>],
+        ['html' , <p  key={'html'}>Knows the <span className="text-blue-600">HTML</span> basics very well.</p>],
+        ['css' , <p  key={'css'}>Built web applications with <span className="text-blue-600">CSS</span> before Tailwind CSS.</p>],
+        ['js' , <p  key={'js'}><span className="text-blue-600">JavaScript</span> is my little sandbox.</p>],
+        ['c' , <p  key={'c'}>Familiar with <span className="text-blue-600">C/C++</span>, the programming language used for our programming fundamentals, data structures and algorithms class.</p>],
+        ['java' , <p  key={'java'}>Familiar with <span className="text-blue-600">Java</span>, the programming language used for  our Object-Oriented Programming class.</p>],
     ])
     const [collapsed, setCollapse] = useState(true);
     const [content, setContent] = useState(null);
