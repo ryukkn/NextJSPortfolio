@@ -178,9 +178,11 @@ export default function Page() {
             </Container>
         </Container>
         {/* Section 2 & 3 & 4*/}
-        <Container id='about' className='h-[250vh] w-full pl-10'>
+        <Container id='about' className='h-[250vh] w-full pl-10 relative'>
             {/* About Me */}
             <Container className={`flex`}>
+                {/* <Container className={`absolute bg-[url('/images/leaves3.png')] w-52 h-52 bg-contain right-0`}></Container>
+                <Container className={`absolute bg-[url('/images/leaves3.png')] w-52 h-52 bg-contain right-[38%] top-[23%]`}></Container> */}
                 <Container className={`flex-[1_1_0%] pt-32 px-12`}>
                     <Text className={`ml-5 text-4xl text-orange-300`}>About Me.</Text>
                     <Text className={`mt-5 ml-5 text-lg font-thin`}>
@@ -196,7 +198,8 @@ export default function Page() {
                         <span>I consider these goals as a motivation for continuous growth, a never-ending learning process that will keep improving my soft and technical skills.</span>
                     </Text>
                 </Container>
-                <Container className={`flex-[1_1_0%]`}></Container>
+                <Container className={`flex-[1_1_0%] pt-32 w-full h-64 flex flex-items-center`}>
+                </Container>
             </Container>
             {/* Experiences */}
             <Container id='experience' className={`flex mt-5`}>
@@ -330,10 +333,10 @@ export default function Page() {
                 <Container className={`flex-[1_1_0%]`}></Container>
             </Container>
             {/* Contacts */}
-            <Container id='contact' className={` pt-24 px-12`}>
+            <Container className={` pt-24 px-12`}>
                 <Text className={`ml-5 text-8xl w-full flex justify-center text-white select-none cursor-pointer hover:animate-bounce`}>I LOVE YOU KHRISTINE HEART AZUL</Text>
             </Container>
-            <Container className={` pt-24 px-12`}>
+            <Container  id='contact' className={` pt-24 px-12`}>
                 <Text className={`ml-5 text-4xl text-orange-300`}>Contact.</Text>
                 <Container className={`flex justify-center w-full`}>
                     <Container className={`flex flex-col flex-[2_2_0%]`}>
