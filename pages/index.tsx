@@ -108,19 +108,19 @@ export default function Page() {
         <Container  className="h-5/6 w-full bg-white flex justify-around bg-[url('/images/background.avif')]" >
             <Container className='relative flex-[3_3_0%] flex justify-center items-center flex-col'>
                 <Container className={`-mt-5 absolute bg-[url('/images/leaves.png')] w-full h-full bg-repeat-x z-10 pointer-events-none contrast-125 brightness-75`}></Container>
-                <Profile className='ml-40 w-96 h-96 scale-150 transition-all'/>
+                <Profile className='ml-40 xl:w-72 xl:h-72 2xl:w-96 2xl:h-96 scale-150 transition-all'/>
             </Container>
             <Container className='flex-[5_5_0%] flex flex-col relative'>
                 <Container className={`-mt-5 absolute bg-[url('/images/leaves.png')] w-full h-full bg-repeat-x z-10 pointer-events-none filter contrast-125 brightness-75`}></Container>
                 <Container hide={content != null || !collapsed} className='flex flex-col flex-[4_4_0%] justify-center items-center relative'>
-                    <Text className={`text-black font-thin text-5xl mb-4 select-none transition-all`}> <span className={`transition-all delay-500 ${animate ? 'text-blue-600' : 'text-blue-black'}`}>Hi!</span> <span className='text-blue-900'> I'm Kenneth James Belga </span></Text>
-                    <Text onMouseEnter={handleStackHoverEnter} onMouseLeave={handleStackHoverLeave}  onClick={toggleCollapse} className={`text-black text-5xl select-none cursor-pointer hover:text-white hover:bg-black pt-1 pb-2 hover:px-16 hover:shadow-xl shadow-blue-600 rounded-lg transition-all ${animate ? '': ''}`}> 
+                    <Text className={`text-black font-thin xl:text-3xl 2xl:text-5xl 2xl:mb-4 xl:mb-1 select-none transition-all`}> <span className={`transition-all delay-500 ${animate ? 'text-blue-600' : 'text-blue-black'}`}>Hi!</span> <span className='text-blue-900'> I'm Kenneth James Belga </span></Text>
+                    <Text onMouseEnter={handleStackHoverEnter} onMouseLeave={handleStackHoverLeave}  onClick={toggleCollapse} className={`text-black xl:text-3xl 2xl:text-5xl select-none cursor-pointer hover:text-white hover:bg-black pt-1 pb-2 hover:px-16 hover:shadow-xl shadow-blue-600 rounded-lg transition-all ${animate ? '': ''}`}> 
                         <span>FULL STACK DEVELOPER</span> 
                     </Text>
-                    <Tray className='w-full justify-center space-x-4 mt-3'>
-                            <FaGithub onClick={()=>handleExternalLink('https://github.com/ryukkn')} className={`text-black text-5xl cursor-pointer hover:scale-125 hover:text-blue-900  transition-all ${animate ? '' : 'translate-y-10'}`} />
-                            <FaFacebook  onClick={()=>handleExternalLink('https://www.facebook.com/kennethjames.belga')} className={`text-black text-5xl cursor-pointer hover:scale-125 hover:text-blue-900  transition-all ${animate ? ' ' : 'translate-y-14'}`} />
-                            <FaLinkedin  onClick={()=>handleExternalLink('https://www.linkedin.com/in/kenneth-james-belga-438004312/')}  className={`text-black text-5xl cursor-pointer hover:scale-125 hover:text-blue-900  transition-all ${animate ? '' : 'translate-y-20'}`}   />
+                    <Tray className='w-full justify-center space-x-4 2xl:mt-3 xl:mt-2'>
+                            <FaGithub onClick={()=>handleExternalLink('https://github.com/ryukkn')} className={`text-black xl:text-4xl 2xl:text-5xl cursor-pointer hover:scale-125 hover:text-blue-900  transition-all ${animate ? '' : 'translate-y-10'}`} />
+                            <FaFacebook  onClick={()=>handleExternalLink('https://www.facebook.com/kennethjames.belga')} className={`text-black xl:text-4xl 2xl:text-5xl cursor-pointer hover:scale-125 hover:text-blue-900  transition-all ${animate ? ' ' : 'translate-y-14'}`} />
+                            <FaLinkedin  onClick={()=>handleExternalLink('https://www.linkedin.com/in/kenneth-james-belga-438004312/')}  className={`text-black xl:text-4xl 2xl:text-5xl cursor-pointer hover:scale-125 hover:text-blue-900  transition-all ${animate ? '' : 'translate-y-20'}`}   />
                     </Tray>
                     <Text hide={!hovering} className='text-black text-lg font-thin animate-pulse mt-60 absolute'>Click to open tech stack ...</Text>
                 
@@ -129,7 +129,7 @@ export default function Page() {
                     <Container className={`h-1/2 flex-shrink-0  flex items-center`}>
                         {/* <Text onClick={toggleCollapse} className={`mt-10 text-5xl select-none cursor-pointer text-white bg-black pt-1 pb-3 px-10 hover:shadow-xl shadow-blue-600 rounded-lg transition-all ${animateIcons ? '': ' translate-y-48 opacity-0'}`}> <span></span> TECH STACK</Text> */}
                     </Container>
-                    <Text className={`text-black font-thin text-4xl mb-10 select-none flex-[1_1_0%] flex text-center justify-end items-center flex-col transition-all ${animateIcons ? '': ' opacity-0'}`}>
+                    <Text className={`text-black font-thin xl:text-2xl 2xl:text-4xl mb-10 select-none flex-[1_1_0%] flex text-center justify-end items-center flex-col transition-all ${animateIcons ? '': ' opacity-0'}`}>
                         <span className='mb-4 text-sm'> <FaQuoteLeft/> </span>
                         <span className='text-blue-900'> Here is a list of my current tech stack so far.... </span>
                         <span className="mt-5 text-sm"> <FaQuoteRight/> </span>
@@ -139,7 +139,7 @@ export default function Page() {
                     <Container className={`h-1/2 flex-shrink-0  flex items-center`}>
                         {/* <Text onClick={toggleCollapse} className={`mt-10 text-5xl select-none cursor-pointer text-white bg-black pt-1 pb-3 px-10 hover:shadow-xl shadow-blue-600 rounded-lg transition-all ${animateIcons ? '': ' translate-y-48 opacity-0'}`}> <span></span> TECH STACK</Text> */}
                     </Container>
-                    <Text  className={` text-black flex-[1_1_0%] font-thin text-4xl italic mb-8 select-none text-center flex items-center justify-end flex-col transition-all ${animate ? '' : ' translate-y-10 opacity-0'} `}>
+                    <Text  className={` text-black flex-[1_1_0%] font-thin 2xl:text-4xl xl:text-2xl italic mb-8 select-none text-center flex items-center justify-end flex-col transition-all ${animate ? '' : ' translate-y-10 opacity-0'} `}>
                         <span className='mb-4 text-sm'> <FaQuoteLeft/> </span>
                         <span>{iconContents.get(content!)} </span>
                         <span className="mt-5 text-sm"> <FaQuoteRight/> </span>
@@ -147,30 +147,30 @@ export default function Page() {
                 </Container>
                 <Collapsable onClick={toggleCollapse} shown={!collapsed} onMouseLeave={handleMouseLeave} className='flex flex-[2_2_0%] flex-col justify-end items-center '>
                     <Container className='flex flex-[1_1_0%] items-center w-full'>
-                        <Tray className='w-full justify-around px-24'>
-                            <Icon onMouseEnter={handleMouseEnter} id='angular' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-20 opacity-0'}`} src="/images/angular.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='flutter' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-5 opacity-0'}`} src="/images/flutter.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='laravel' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-24 opacity-0'}`} src="/images/laravel.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='next' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-32 opacity-0'}`} src="/images/next.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='nodejs' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-10 opacity-0'}`} src="/images/nodejs.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='firebase' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-16 opacity-0'}`} src="/images/firebase.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='aws' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-5 opacity-0'}`} src="/images/aws.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='gcloud' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-20 opacity-0'}`} src="/images/googlecloud.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='tailwind' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-32 opacity-0'}`} src="/images/tailwind.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='tensorflow' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-24 opacity-0'}`} src="/images/tensorflow.png"/>
+                        <Tray className='w-full justify-around 2xl:px-24 xl:px-20'>
+                            <Icon onMouseEnter={handleMouseEnter} id='angular' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-20 opacity-0'}`} src="/images/angular.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='flutter' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-5 opacity-0'}`} src="/images/flutter.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='laravel' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-24 opacity-0'}`} src="/images/laravel.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='next' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-32 opacity-0'}`} src="/images/next.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='nodejs' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-10 opacity-0'}`} src="/images/nodejs.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='firebase' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-16 opacity-0'}`} src="/images/firebase.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='aws' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-5 opacity-0'}`} src="/images/aws.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='gcloud' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-20 opacity-0'}`} src="/images/googlecloud.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='tailwind' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-32 opacity-0'}`} src="/images/tailwind.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='tensorflow' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-24 opacity-0'}`} src="/images/tensorflow.png"/>
                         </Tray>
                     </Container>
                     <Container className='flex flex-[1_1_0%] items-start w-full'>
-                        <Tray  className='w-full justify-around px-40'>
-                            <Icon onMouseEnter={handleMouseEnter} id='html' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-32 opacity-0'}`} src="/images/html.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='css' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-16 opacity-0'}`} src="/images/css.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='js' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-24 opacity-0'}`} src="/images/js.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='ts' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-5 opacity-0'}`} src="/images/ts.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='python' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-10 opacity-0'}`} src="/images/python.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='sql' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-16 opacity-0'}`} src="/images/sql.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='php' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-2 opacity-0'}`} src="/images/php.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='c' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-16 opacity-0'}`} src="/images/c.png"/>
-                            <Icon onMouseEnter={handleMouseEnter} id='java' className={`w-20 h-20 ${animateIcons ? '' : 'translate-y-2 opacity-0'}`} src="/images/java.webp"/>
+                        <Tray  className='w-full justify-around  2xl:px-40 xl:px-32'>
+                            <Icon onMouseEnter={handleMouseEnter} id='html' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-32 opacity-0'}`} src="/images/html.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='css' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-16 opacity-0'}`} src="/images/css.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='js' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-24 opacity-0'}`} src="/images/js.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='ts' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-5 opacity-0'}`} src="/images/ts.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='python' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-10 opacity-0'}`} src="/images/python.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='sql' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-16 opacity-0'}`} src="/images/sql.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='php' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-2 opacity-0'}`} src="/images/php.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='c' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-16 opacity-0'}`} src="/images/c.png"/>
+                            <Icon onMouseEnter={handleMouseEnter} id='java' className={`2xl:w-20 2xl:h-20 xl:w-14 xl:h-14 ${animateIcons ? '' : 'translate-y-2 opacity-0'}`} src="/images/java.webp"/>
                         </Tray>
                     </Container>   
                 </Collapsable>            
@@ -336,8 +336,6 @@ export default function Page() {
                 <Text className={`ml-5 text-4xl text-orange-300`}>Contact.</Text>
                 <Text className={`mt-5 ml-5 text-lg`}>
                     <span>I am looking forward to offer my services as a developer to contribute to more projects, as well as to my future teams. </span>
-                    <span>Aside from my goal to improve the ways of life by the continous development of our technologies, I am also dedicated in sharing my knowledge to guide my colleagues. </span>
-                    <span>I consider these goals as a motivation for continous growth, a never ending learning process that will keep improving my technical and soft skills.</span>
                 </Text>
             </Container>
         </Container>
