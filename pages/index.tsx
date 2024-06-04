@@ -7,10 +7,11 @@ import Text from "@/components/Text"
 import Tray from "@/components/Tray"
 import Icon from "@/components/Icon"
 import Collapsable from "@/components/Collapsable"
+import InputField from "@/components/InputField"
 
 import React, { useState, useEffect} from 'react';
 
-import { FaGithub,FaFacebook,FaLinkedin,FaQuoteLeft, FaQuoteRight, FaRegDotCircle  } from "react-icons/fa";
+import { FaGithub,FaFacebook,FaLinkedin,FaQuoteLeft, FaQuoteRight, FaRegDotCircle, FaPhone, FaEnvelope  } from "react-icons/fa";
 
 
 export default function Page() {
@@ -191,7 +192,7 @@ export default function Page() {
                     </Text>
                     <Text className={`mt-5 ml-5 text-lg`}>
                         <span>I am looking forward to offering my services as a developer to contribute to more projects, as well as to my future teams. </span>
-                        <span>Aside from my goal to improve the ways of life through the continuous development of our technologies, I am also dedicated to sharing my knowledge to guide my colleagues. </span>
+                        <span>Aside from my goal to improve the ways of life through the continuous development of our technologies, I am also dedicated to <span className={`text-blue-400 font-normal`}>sharing my knowledge to guide my colleagues</span>. </span>
                         <span>I consider these goals as a motivation for continuous growth, a never-ending learning process that will keep improving my soft and technical skills.</span>
                     </Text>
                 </Container>
@@ -334,9 +335,46 @@ export default function Page() {
             </Container>
             <Container className={` pt-24 px-12`}>
                 <Text className={`ml-5 text-4xl text-orange-300`}>Contact.</Text>
-                <Text className={`mt-5 ml-5 text-lg`}>
-                    <span>I am looking forward to offer my services as a developer to contribute to more projects, as well as to my future teams. </span>
-                </Text>
+                <Container className={`flex justify-center w-full`}>
+                    <Container className={`flex flex-col flex-[2_2_0%]`}>
+                        <Container className={`flex items-center mt-10 ml-10 select-none cursor-pointer`}>
+                            <FaPhone className={`scale-x-[-1]`}/>
+                            <Text className={`text-lg ml-5`}>
+                                <span>09957140344</span>
+                            </Text>
+                        </Container>
+                        <Container className={`flex items-center mt-5 ml-10 select-none cursor-pointer`}>
+                            <FaEnvelope className={`scale-x-[-1]`}/>
+                            <Text className={`text-lg ml-5`}>
+                                <span>kennethjbelga566@gmail.com</span>
+                            </Text>
+                        </Container>
+                        <Container className={`flex items-center mt-5 ml-10 select-none cursor-pointer`}>
+                            <FaFacebook/>
+                            <Text className={`text-lg ml-5`}>
+                                <span>kennethjames.belga</span>
+                            </Text>
+                        </Container>
+                    </Container>
+
+                    <Container className={`flex-[3_3_0%] mr-36 mt-7 h-96`}>
+                        <Text className={`text-3xl`}>Drop me message </Text>
+                        <Container>
+                            <Container>
+                                <Text className={`text-lg mt-5`}> Name </Text>
+                                <InputField></InputField>
+                            </Container>
+                            <Container>
+                                <Text className={`text-lg mt-5`}> Email </Text>
+                                <InputField></InputField>
+                            </Container>
+                            <Container>
+                                <Text className={`text-lg mt-5`}> Message </Text>
+                                <InputField></InputField>
+                            </Container>
+                        </Container>
+                    </Container>
+                </Container>
             </Container>
         </Container>
     </Base>
