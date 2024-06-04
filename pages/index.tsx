@@ -205,7 +205,7 @@ export default function Page() {
                     <Container id='projects' className={`mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
                         <Container className={`flex items-center pointer-events-none `}>
                             <FaRegDotCircle className={`mr-5 transition-all ${hoveredExp == 'projects' ? 'text-blue-500' : ''}` }/>
-                            <Text className={`text-xl font-bold w-1/2 ${hoveredExp == 'projects' ? 'text-orange-200' : ''} `}>
+                            <Text className={`text-xl font-bold ${hoveredExp == 'projects' ? 'text-orange-200' : ''} `}>
                                 <span> Projects </span> <span className="font-thin"> | Bicol University </span>
                             </Text>
                         </Container>
@@ -237,7 +237,7 @@ export default function Page() {
                     <Container id='ojt' className={`mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
                         <Container className={`flex items-center pointer-events-none`}>
                             <FaRegDotCircle className={`mr-5 ${hoveredExp == 'ojt' ? 'text-blue-500' : ''}`}/>
-                            <Text className={`text-xl font-bold w-1/2 ${hoveredExp == 'ojt' ? 'text-orange-200' : ''}`}>
+                            <Text className={`text-xl font-bold ${hoveredExp == 'ojt' ? 'text-orange-200' : ''}`}>
                                 <span> On-the-Job Trainee </span> <span className="font-thin"> | OWWA-R5 </span>
                             </Text>
                         </Container>
@@ -270,7 +270,7 @@ export default function Page() {
                     <Container  id='freelance' className={`mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
                         <Container className={`flex items-center pointer-events-none`}>
                             <FaRegDotCircle className={`mr-5 ${hoveredExp == 'freelance' ? 'text-blue-500' : ''}`}/>
-                            <Text className={`text-xl font-bold w-1/2 ${hoveredExp == 'freelance' ? 'text-orange-200' : ''}`}>
+                            <Text className={`text-xl font-bold ${hoveredExp == 'freelance' ? 'text-orange-200' : ''}`}>
                                 <span> Freelance Developer </span> <span className="font-thin"> | Local</span>
                             </Text>
                         </Container>
@@ -301,7 +301,7 @@ export default function Page() {
                     <Container  id='upward' className={`mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
                         <Container className={`flex items-center pointer-events-none`}>
                             <FaRegDotCircle className={`mr-5 ${hoveredExp == 'upward' ? 'text-blue-500' : ''}`}/>
-                            <Text className={`text-xl font-bold w-1/2 ${hoveredExp == 'upward' ? 'text-orange-200' : ''}`}>
+                            <Text className={`text-xl font-bold ${hoveredExp == 'upward' ? 'text-orange-200' : ''}`}>
                                 <span> Junior Software Engineer </span> <span className="font-thin"> | Upward Solutions </span>
                             </Text>
                         </Container>
@@ -330,7 +330,7 @@ export default function Page() {
             </Container>
             {/* Contacts */}
             <Container id='contact' className={` pt-24 px-12`}>
-                <Text className={`ml-5 text-8xl w-full flex justify-center text-white`}>I LOVE YOU KHRISTINE HEART AZUL</Text>
+                <Text className={`ml-5 text-8xl w-full flex justify-center text-white select-none cursor-pointer hover:animate-bounce`}>I LOVE YOU KHRISTINE HEART AZUL</Text>
             </Container>
             <Container className={` pt-24 px-12`}>
                 <Text className={`ml-5 text-4xl text-orange-300`}>Contact.</Text>
