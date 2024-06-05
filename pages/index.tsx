@@ -248,9 +248,9 @@ export default function Page() {
                         </Container>
                         {/* Projects */}
                         <Container className={`flex-[1_1_0%] flex items-center justify-center space-x-10`}>
-                            <Container className={`bg-[url('/images/projects/abaca1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-[22rem] opacity-70 hover:opacity-100`} />
-                            <Container className={`bg-[url('/images/projects/datacol1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-[22rem] opacity-70 hover:opacity-100`} />
-                            <Container className={`bg-[url('/images/projects/lichen1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-[22rem] opacity-70 hover:opacity-100`} />
+                            <Container className={`bg-[url('/images/projects/datacol1.jpg')] bg-contain bg-no-repeat bg-center w-36 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                            <Container className={`bg-[url('/images/projects/abaca1.jpg')] bg-contain bg-no-repeat bg-center w-40 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                            <Container className={`bg-[url('/images/projects/lichen1.jpg')] bg-contain bg-no-repeat bg-center w-36 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
                         </Container>
                     </Container>
                     {/* Exp 1 */}
@@ -288,7 +288,7 @@ export default function Page() {
                         </Container>
                         {/* Projects */}
                         <Container className={`flex-[1_1_0%] flex items-center justify-center space-x-10`}>
-                            <Container className={`bg-[url('/images/projects/owwa1.png')] bg-contain bg-no-repeat bg-center w-[35rem] h-[22rem] opacity-70 hover:opacity-100`} />
+                            <Container className={`bg-[url('/images/projects/owwa1.png')] bg-contain bg-no-repeat bg-center w-[35rem] h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
                         </Container>
                     </Container>
 
@@ -326,11 +326,11 @@ export default function Page() {
 
                        {/* Projects */}
                        <Container className={`flex-[1_1_0%] flex items-center justify-center space-x-10`}>
-                            <Container className={`bg-[url('/images/projects/comlab1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-[22rem] opacity-70 hover:opacity-100`} />
-                            <Container className={`bg-[url('/images/projects/finance1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-[22rem] opacity-70 hover:opacity-100`} />
+                            <Container className={`bg-[url('/images/projects/comlab1.jpg')] bg-contain bg-no-repeat bg-center w-40 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all `} />
+                            <Container className={`bg-[url('/images/projects/finance1.jpg')] bg-contain bg-no-repeat bg-center w-36 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
                             <Container className={`flex flex-col`}>
-                                <Container className={`bg-[url('/images/projects/clinic1.png')] bg-contain bg-no-repeat bg-center w-80 h-[12rem] opacity-70 hover:opacity-100`} />
-                                <Container className={`bg-[url('/images/projects/lms1.png')] bg-contain bg-no-repeat bg-center w-80 h-[12rem] opacity-70 hover:opacity-100`} />
+                                <Container className={`bg-[url('/images/projects/clinic1.png')] bg-contain bg-no-repeat bg-center w-80 h-[12rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                                <Container className={`bg-[url('/images/projects/lms1.png')] bg-contain bg-no-repeat bg-center w-80 h-[12rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
                             </Container>
                         </Container>
                     </Container>
@@ -367,9 +367,9 @@ export default function Page() {
                             </Container>
                         </Container>
                         <Container className={`flex-[1_1_0%] flex items-center justify-center space-x-10`}>
-                            <Container className={`bg-[url('/images/projects/ecom1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
-                            <Container className={`bg-[url('/images/projects/ecom2.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
-                            <Container className={`bg-[url('/images/projects/ecom3.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
+                            <Container className={`bg-[url('/images/projects/ecom1.jpg')] bg-contain bg-no-repeat bg-center w-40 h-96 opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                            <Container className={`bg-[url('/images/projects/ecom2.jpg')] bg-contain bg-no-repeat bg-center w-36 h-96 opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                            <Container className={`bg-[url('/images/projects/ecom3.jpg')] bg-contain bg-no-repeat bg-center w-32 h-96 opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
                         </Container>
                     </Container>
 
