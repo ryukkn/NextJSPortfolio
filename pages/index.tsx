@@ -263,7 +263,7 @@ export default function Page() {
                                 </Text>
                             </Container>
                             <Container className={`flex items-center`}>
-                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'ojt' ? 'bg-blue-500 h-60' : 'bg-white h-48'}`}></Container>
+                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'ojt' ? 'bg-blue-500 h-80' : 'bg-white h-72'}`}></Container>
                                 <Container className={`w-full`}>
                                     <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
                                         <span> Full Stack Developer </span>
@@ -288,9 +288,7 @@ export default function Page() {
                         </Container>
                         {/* Projects */}
                         <Container className={`flex-[1_1_0%] flex items-center justify-center space-x-10`}>
-                            <Container className={`bg-[url('/images/projects/abaca1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
-                            <Container className={`bg-[url('/images/projects/datacol1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
-                            <Container className={`bg-[url('/images/projects/lichen1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
+                            <Container className={`bg-[url('/images/projects/owwa1.png')] bg-contain bg-no-repeat bg-center w-[35rem] h-[22rem] opacity-70 hover:opacity-100`} />
                         </Container>
                     </Container>
 
@@ -304,7 +302,7 @@ export default function Page() {
                                 </Text>
                             </Container>
                             <Container className={`flex items-center`}>
-                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'freelance' ? 'bg-blue-500 h-72' : 'bg-white h-56'}`}></Container>
+                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'freelance' ? 'bg-blue-500 h-80' : 'bg-white h-72'}`}></Container>
                                 <Container className={`w-full`}>
                                     <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
                                         <span> Built a laboratory monitoring system based on QR Scanning using the Flutter Framework and a Relational Database</span>
@@ -328,9 +326,12 @@ export default function Page() {
 
                        {/* Projects */}
                        <Container className={`flex-[1_1_0%] flex items-center justify-center space-x-10`}>
-                            <Container className={`bg-[url('/images/projects/abaca1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
-                            <Container className={`bg-[url('/images/projects/datacol1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
-                            <Container className={`bg-[url('/images/projects/lichen1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
+                            <Container className={`bg-[url('/images/projects/comlab1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-[22rem] opacity-70 hover:opacity-100`} />
+                            <Container className={`bg-[url('/images/projects/finance1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-[22rem] opacity-70 hover:opacity-100`} />
+                            <Container className={`flex flex-col`}>
+                                <Container className={`bg-[url('/images/projects/clinic1.png')] bg-contain bg-no-repeat bg-center w-80 h-[12rem] opacity-70 hover:opacity-100`} />
+                                <Container className={`bg-[url('/images/projects/lms1.png')] bg-contain bg-no-repeat bg-center w-80 h-[12rem] opacity-70 hover:opacity-100`} />
+                            </Container>
                         </Container>
                     </Container>
 
@@ -345,7 +346,7 @@ export default function Page() {
                                 </Text>
                             </Container>
                             <Container className={`flex items-center`}>
-                            <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'upward' ? 'bg-blue-500 h-40' : 'bg-white h-24'}`}></Container>
+                            <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'upward' ? 'bg-blue-500 h-80' : 'bg-white h-48'}`}></Container>
                                 <Container className={`w-full`}>
                                     <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
                                         <span> Worked with an E-commerce system with Rider, Client and BOP side </span>
@@ -357,6 +358,9 @@ export default function Page() {
                                         <span> Resolved 30+ issues for the E-commerce mobile application </span>
                                     </Text>
                                     <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Used Google Maps API and implemented visual navigation for the Rider app </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
                                         <span> Parsed an excel sheet containing 1000+ product entries, including their variants into uploadable data</span>
                                     </Text>
                                 </Container>
@@ -364,6 +368,8 @@ export default function Page() {
                         </Container>
                         <Container className={`flex-[1_1_0%] flex items-center justify-center space-x-10`}>
                             <Container className={`bg-[url('/images/projects/ecom1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
+                            <Container className={`bg-[url('/images/projects/ecom2.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
+                            <Container className={`bg-[url('/images/projects/ecom3.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
                         </Container>
                     </Container>
 
