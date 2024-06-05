@@ -68,7 +68,12 @@ export default function Page() {
         setHovering(false);
     }
     const handleExpHoverEnter = (event:any) => {
-        setHoveredExp(event.target.id);
+        // iteratively find parent
+        var parent = event.target;
+        while(!parent.classList.contains('exp')){
+            parent = parent.parentElement
+        }
+        setHoveredExp(parent.id);
     }
     const handleExpHoverLeave = (event:any) => {
         setHoveredExp(null);
@@ -206,131 +211,164 @@ export default function Page() {
                 <Container className={`flex-[1_1_0%] w-full pt-12 px-12`}>
                     <Text className={`ml-5 text-4xl text-orange-300`}>Experiences.</Text>
                     {/* Exp 0 */}
-                    <Container id='projects' className={`mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
-                        <Container className={`flex items-center pointer-events-none `}>
-                            <FaRegDotCircle className={`mr-5 transition-all ${hoveredExp == 'projects' ? 'text-blue-500' : ''}` }/>
-                            <Text className={`text-xl font-bold ${hoveredExp == 'projects' ? 'text-orange-200' : ''} `}>
-                                <span> Projects </span> <span className="font-thin"> | Bicol University </span>
-                            </Text>
-                        </Container>
-                        <Container className={`flex items-center pointer-events-none`}>
-                            <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'projects' ? 'bg-blue-500 h-72' : 'bg-white h-48'}`}></Container>
-                            <Container className={`w-full`}>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Developed a machine learning model for detecting three types of lichen planus skin rash. </span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Integrated the object detection model to a Flutter mobile application to identify three types of lichen planus. </span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Created User Interfaces for the Lichen Planus Identifier. </span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Developed a machine learning model for classifying 8 Abaca Fiber Grades (Undergraduate Thesis). </span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Integrated the classification model and video processing to a Flutter app to continously classify the Abaca Fiber Grades. </span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Also created interfaces for the Abaca Fiber Grade Classifier. </span>
+                    <Container id='projects' className={`exp flex mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
+                        <Container className={`flex-[1_1_0%] flex-shrink-0`}>
+                            <Container className={`flex items-center`}>
+                                <FaRegDotCircle className={`mr-5 transition-all ${hoveredExp == 'projects' ? 'text-blue-500' : ''}` }/>
+                                <Text className={`text-xl font-bold ${hoveredExp == 'projects' ? 'text-orange-200' : ''} `}>
+                                    <span> University Projects </span> <span className="font-thin"> | Bicol University </span>
                                 </Text>
                             </Container>
+                            <Container className={`flex items-center`}>
+                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'projects' ? 'bg-blue-500 h-80' : 'bg-white h-72'}`}></Container>
+                                <Container className={`w-full`}>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Developed a machine learning model for detecting three types of lichen planus skin rash. </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Integrated the object detection model to a Flutter mobile application to identify three types of lichen planus. </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Created User Interfaces for the Lichen Planus Identifier. </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Developed a web app for data collection  (Undergraduate Thesis). </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Developed a machine learning model for classifying 8 Abaca Fiber Grades (Undergraduate Thesis). </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Integrated the classification model and video processing to a Flutter app to continously classify the Abaca Fiber Grades (Undergraduate Thesis). </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Also created interfaces for the Abaca Fiber Grade Classifier (Undergraduate Thesis). </span>
+                                    </Text>
+                                </Container>
+                            </Container>
+                        </Container>
+                        {/* Projects */}
+                        <Container className={`flex-[1_1_0%] flex items-center justify-center space-x-10`}>
+                            <Container className={`bg-[url('/images/projects/abaca1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-[22rem] opacity-70 hover:opacity-100`} />
+                            <Container className={`bg-[url('/images/projects/datacol1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-[22rem] opacity-70 hover:opacity-100`} />
+                            <Container className={`bg-[url('/images/projects/lichen1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-[22rem] opacity-70 hover:opacity-100`} />
                         </Container>
                     </Container>
                     {/* Exp 1 */}
-                    <Container id='ojt' className={`mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
-                        <Container className={`flex items-center pointer-events-none`}>
-                            <FaRegDotCircle className={`mr-5 ${hoveredExp == 'ojt' ? 'text-blue-500' : ''}`}/>
-                            <Text className={`text-xl font-bold ${hoveredExp == 'ojt' ? 'text-orange-200' : ''}`}>
-                                <span> On-the-Job Trainee </span> <span className="font-thin"> | OWWA-R5 </span>
-                            </Text>
-                        </Container>
-                        <Container className={`flex items-center pointer-events-none`}>
-                            <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'ojt' ? 'bg-blue-500 h-60' : 'bg-white h-48'}`}></Container>
-                            <Container className={`w-full`}>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Full Stack Developer </span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Collaborated with a five-man team </span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Parsed an excel sheet into usable data </span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> PHP, Laravel Framework and Relational database </span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Responsible for the integration of the components created by the developers </span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Successfully developed an SPRS within a month </span>
+                    <Container id='ojt' className={`exp flex mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
+                        <Container className={`flex-[1_1_0%] flex-shrink-0`}>
+                            <Container className={`flex items-center pointer-events-none`}>
+                                <FaRegDotCircle className={`mr-5 ${hoveredExp == 'ojt' ? 'text-blue-500' : ''}`}/>
+                                <Text className={`text-xl font-bold ${hoveredExp == 'ojt' ? 'text-orange-200' : ''}`}>
+                                    <span> On-the-Job Trainee </span> <span className="font-thin"> | OWWA-R5 </span>
                                 </Text>
                             </Container>
+                            <Container className={`flex items-center`}>
+                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'ojt' ? 'bg-blue-500 h-60' : 'bg-white h-48'}`}></Container>
+                                <Container className={`w-full`}>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Full Stack Developer </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Collaborated with a five-man team </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Parsed an excel sheet into usable data </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> PHP, Laravel Framework and Relational database </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Responsible for the integration of the components created by the developers </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Successfully developed an SPRS within a month </span>
+                                    </Text>
+                                </Container>
+                            </Container>
+                        </Container>
+                        {/* Projects */}
+                        <Container className={`flex-[1_1_0%] flex items-center justify-center space-x-10`}>
+                            <Container className={`bg-[url('/images/projects/abaca1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
+                            <Container className={`bg-[url('/images/projects/datacol1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
+                            <Container className={`bg-[url('/images/projects/lichen1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
                         </Container>
                     </Container>
 
                     {/* Exp 2 */}
-                    <Container  id='freelance' className={`mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
-                        <Container className={`flex items-center pointer-events-none`}>
-                            <FaRegDotCircle className={`mr-5 ${hoveredExp == 'freelance' ? 'text-blue-500' : ''}`}/>
-                            <Text className={`text-xl font-bold ${hoveredExp == 'freelance' ? 'text-orange-200' : ''}`}>
-                                <span> Freelance Developer </span> <span className="font-thin"> | Local</span>
-                            </Text>
-                        </Container>
-                        <Container className={`flex items-center pointer-events-none`}>
-                            <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'freelance' ? 'bg-blue-500 h-80' : 'bg-white h-56'}`}></Container>
-                            <Container className={`w-full`}>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Built a laboratory monitoring system based on QR Scanning using the Flutter Framework and a Relational Database</span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Assisted on the stylization of a Clinic Management System using CSS and resolved bugs found in the system.</span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Assisted with a Finance Assistant mobile application, creating charts for monitoring expenses and integrating AI to generate recommendations for the given insights. </span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Backend Developer for an LMS Project using Angular, PostgreSQL, and NodeJS. </span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Created an AWS Cloud Service for the LMS development team and Google Cloud Instance for deployment. </span>
+                    <Container  id='freelance' className={`exp flex mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
+                        <Container className={`flex-[1_1_0%] flex-shrink-0`}>
+                            <Container className={`flex items-center`}>
+                                <FaRegDotCircle className={`mr-5 ${hoveredExp == 'freelance' ? 'text-blue-500' : ''}`}/>
+                                <Text className={`text-xl font-bold ${hoveredExp == 'freelance' ? 'text-orange-200' : ''}`}>
+                                    <span> Freelance Developer </span> <span className="font-thin"> | Local</span>
                                 </Text>
                             </Container>
+                            <Container className={`flex items-center`}>
+                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'freelance' ? 'bg-blue-500 h-72' : 'bg-white h-56'}`}></Container>
+                                <Container className={`w-full`}>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Built a laboratory monitoring system based on QR Scanning using the Flutter Framework and a Relational Database</span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Assisted on the stylization of a Clinic Management System using CSS and resolved bugs found in the system.</span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Assisted with a Finance Assistant mobile application, creating charts for monitoring expenses and integrating AI to generate recommendations for the given insights. </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Backend Developer for an LMS Project using Angular, PostgreSQL, and NodeJS. </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Created an AWS Cloud Service for the LMS development team and Google Cloud Instance for deployment. </span>
+                                    </Text>
+                                </Container>
+                            </Container>
+                        </Container>
+                       
+
+                       {/* Projects */}
+                       <Container className={`flex-[1_1_0%] flex items-center justify-center space-x-10`}>
+                            <Container className={`bg-[url('/images/projects/abaca1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
+                            <Container className={`bg-[url('/images/projects/datacol1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
+                            <Container className={`bg-[url('/images/projects/lichen1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
                         </Container>
                     </Container>
 
 
                     {/* Exp 3 */}
-                    <Container  id='upward' className={`mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
-                        <Container className={`flex items-center pointer-events-none`}>
-                            <FaRegDotCircle className={`mr-5 ${hoveredExp == 'upward' ? 'text-blue-500' : ''}`}/>
-                            <Text className={`text-xl font-bold ${hoveredExp == 'upward' ? 'text-orange-200' : ''}`}>
-                                <span> Junior Software Engineer </span> <span className="font-thin"> | Upward Solutions </span>
-                            </Text>
-                        </Container>
-                        <Container className={`flex items-center pointer-events-none`}>
-                        <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'upward' ? 'bg-blue-500 h-40' : 'bg-white h-24'}`}></Container>
-                            <Container className={`w-full`}>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Worked with an E-commerce system with Rider, Client and BOP side </span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Angular, Ionic, and Firebase  </span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Resolved 30+ issues for the E-commerce mobile application </span>
-                                </Text>
-                                <Text className={`mt-2 ml-12 text-lg font-thin`}>
-                                    <span> Parsed an excel sheet containing 1000+ product entries, including their variants into uploadable data</span>
+                    <Container  id='upward' className={`exp flex mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
+                        <Container className={`flex-[1_1_0%] flex-shrink-0`}>
+                            <Container className={`flex items-center`}>
+                                <FaRegDotCircle className={`mr-5 ${hoveredExp == 'upward' ? 'text-blue-500' : ''}`}/>
+                                <Text className={`text-xl font-bold ${hoveredExp == 'upward' ? 'text-orange-200' : ''}`}>
+                                    <span> Junior Software Engineer </span> <span className="font-thin"> | Upward Solutions </span>
                                 </Text>
                             </Container>
+                            <Container className={`flex items-center`}>
+                            <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'upward' ? 'bg-blue-500 h-40' : 'bg-white h-24'}`}></Container>
+                                <Container className={`w-full`}>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Worked with an E-commerce system with Rider, Client and BOP side </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Angular, Ionic, and Firebase  </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Resolved 30+ issues for the E-commerce mobile application </span>
+                                    </Text>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Parsed an excel sheet containing 1000+ product entries, including their variants into uploadable data</span>
+                                    </Text>
+                                </Container>
+                            </Container>
+                        </Container>
+                        <Container className={`flex-[1_1_0%] flex items-center justify-center space-x-10`}>
+                            <Container className={`bg-[url('/images/projects/ecom1.jpg')] bg-contain bg-no-repeat bg-center w-48 h-96 opacity-70 hover:opacity-100`} />
                         </Container>
                     </Container>
 
                 </Container>
 
-                <Container className={`flex-[1_1_0%]`}></Container>
             </Container>
             {/* Contacts */}
             <Container className={` pt-24 px-12`}>
