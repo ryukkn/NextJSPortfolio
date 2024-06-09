@@ -8,6 +8,7 @@ import Tray from "@/components/Tray"
 import Icon from "@/components/Icon"
 import Collapsable from "@/components/Collapsable"
 import InputField from "@/components/InputField"
+import DynamicLogos from "@/components/DynamicLogos"
 
 import React, { useState, useEffect} from 'react';
 
@@ -46,11 +47,24 @@ export default function Page() {
 
     const [animate, setAnimate] = useState(false);
     const [animateIcons, setAnimateIcons] = useState(false);
+    
+    const [tags, setTags] = useState<string[]>([]);
+    const [project, setProject] = useState<any>(null);
 
     useEffect(() => {
-      // Trigger the animation after component mounts
       setAnimate(true);
     }, []);
+
+
+    const handleProjectHoverEnter = (project:any,_tags:any) => {
+        retoggleAnimate();
+        setProject(project);
+        setTags(_tags)
+    }
+    const handleProjectHoverLeave = () => {
+        setProject(null);
+        setTags([])
+    }
 
     const handleMouseEnter = (event:any) => {
         setContent(event.target.id);
@@ -188,6 +202,8 @@ export default function Page() {
             <Container className={`flex`}>
                 {/* <Container className={`absolute bg-[url('/images/leaves3.png')] w-52 h-52 bg-contain right-0`}></Container>
                 <Container className={`absolute bg-[url('/images/leaves3.png')] w-52 h-52 bg-contain right-[38%] top-[23%]`}></Container> */}
+                <Container className={`flex-[1_1_0%] pt-32 w-full h-64 flex flex-items-center`}>
+                </Container>
                 <Container className={`flex-[1_1_0%] pt-32 px-12`}>
                     <Text className={`ml-5 text-4xl text-orange-300`}>About Me.</Text>
                     <Text className={`mt-5 ml-5 text-lg font-thin`}>
@@ -198,12 +214,10 @@ export default function Page() {
                         <span>Throughout this journey, I developed the sense of flexibility to engage both sides of Backend and Front-End Development. </span>
                     </Text>
                     <Text className={`mt-5 ml-5 text-lg`}>
-                        <span>I am looking forward to offering my services as a developer to contribute to more projects, as well as to my future teams. </span>
-                        <span>Aside from my goal to improve the ways of life through the continuous development of our technologies, I am also dedicated to <span className={`text-blue-400 font-normal`}>sharing my knowledge to guide my colleagues</span>. </span>
+                        <span>I am looking forward to offering my services as a <span className={`text-blue-400 font-normal`}>full stack developer </span>to contribute to more projects, as well as to my future teams. </span>
+                        <span>Aside from my goal to improve the ways of life through the continuous development of our technologies, I am also dedicated to <span className={`text-blue-400 font-normal`}>sharing my knowledge in order to guide and lead my colleagues</span>. </span>
                         <span>I consider these goals as a motivation for continuous growth, a never-ending learning process that will keep improving my soft and technical skills.</span>
                     </Text>
-                </Container>
-                <Container className={`flex-[1_1_0%] pt-32 w-full h-64 flex flex-items-center`}>
                 </Container>
             </Container>
             {/* Experiences */}
@@ -220,37 +234,42 @@ export default function Page() {
                                 </Text>
                             </Container>
                             <Container className={`flex items-center`}>
-                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'projects' ? 'bg-blue-500 h-80' : 'bg-white h-72'}`}></Container>
-                                <Container className={`w-full`}>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'projects' ? 'bg-blue-500 h-96' : 'bg-white h-72'}`}></Container>
+                                <Container className={`w-full h-96`}>
+                                    <Text hide={hoveredExp == 'projects' && project && project!='lichen'} className={`${(animate || hoveredExp!='projects')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${hoveredExp == 'projects' && project && project !='lichen' ? 'text-orange-300' : ''}`}>
                                         <span> Developed a machine learning model for detecting three types of lichen planus skin rash. </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                    <Text hide={hoveredExp == 'projects' && project && project!='lichen'} className={`${(animate || hoveredExp!='projects')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
                                         <span> Integrated the object detection model to a Flutter mobile application to identify three types of lichen planus. </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                    <Text hide={hoveredExp == 'projects' && project && project!='lichen'} className={`${(animate || hoveredExp!='projects')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
                                         <span> Created User Interfaces for the Lichen Planus Identifier. </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
-                                        <span> Developed a web app for data collection  (Undergraduate Thesis). </span>
+                                    <Text hide={hoveredExp == 'projects' && project && project!='datacol'} className={`${(animate || hoveredExp!='projects')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Developed a web app for data collection, implementing direct data transfer from mobile to a local server  (Undergraduate Thesis). </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                    <Text hide={hoveredExp == 'projects' && project && project!='abaca'}   className={`${(animate || hoveredExp!='projects')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
                                         <span> Developed a machine learning model for classifying 8 Abaca Fiber Grades (Undergraduate Thesis). </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
-                                        <span> Integrated the classification model and video processing to a Flutter app to continously classify the Abaca Fiber Grades (Undergraduate Thesis). </span>
+                                    <Text hide={hoveredExp == 'projects' && project && project!='abaca'}  className={`${(animate || hoveredExp!='projects')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Contributed to develop flutter app to continously classify the Abaca Fiber Grades implementing classification model and video processing  (Undergraduate Thesis). </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                    <Text hide={hoveredExp == 'projects' && project && project!='abaca'}  className={`${(animate || hoveredExp!='projects')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
                                         <span> Also created interfaces for the Abaca Fiber Grade Classifier (Undergraduate Thesis). </span>
                                     </Text>
+                                    <Container className={`mt-7 ml-12 flex w-full space-x-8`} hide={hoveredExp != 'projects' || (hoveredExp == 'projects' && project == null)}>
+                                        <DynamicLogos className={`w-24 h-24 transition-all ${animate ? '' : ' -translate-x-5 opacity-0'}`} tags={tags}></DynamicLogos>
+                                    </Container>
                                 </Container>
+                                
                             </Container>
+                      
                         </Container>
                         {/* Projects */}
                         <Container className={`flex-[1_1_0%] flex items-center justify-center space-x-10`}>
-                            <Container className={`bg-[url('/images/projects/datacol1.jpg')] bg-contain bg-no-repeat bg-center w-36 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
-                            <Container className={`bg-[url('/images/projects/abaca1.jpg')] bg-contain bg-no-repeat bg-center w-40 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
-                            <Container className={`bg-[url('/images/projects/lichen1.jpg')] bg-contain bg-no-repeat bg-center w-36 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                            <Container onMouseEnter={()=>handleProjectHoverEnter('datacol',['angular','nodejs','tailwind','html','ts'])} onMouseLeave={handleProjectHoverLeave} className={`bg-[url('/images/projects/datacol1.jpg')] bg-contain bg-no-repeat bg-center w-36 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                            <Container onMouseEnter={()=>handleProjectHoverEnter('abaca',['flutter','firebase','tensorflow','python'])} onMouseLeave={handleProjectHoverLeave}  className={`bg-[url('/images/projects/abaca1.jpg')] bg-contain bg-no-repeat bg-center w-40 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                            <Container onMouseEnter={()=>handleProjectHoverEnter('lichen',['flutter','tensorflow','python'])} onMouseLeave={handleProjectHoverLeave}  className={`bg-[url('/images/projects/lichen1.jpg')] bg-contain bg-no-repeat bg-center w-36 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
                         </Container>
                     </Container>
                     {/* Exp 1 */}
@@ -263,32 +282,35 @@ export default function Page() {
                                 </Text>
                             </Container>
                             <Container className={`flex items-center`}>
-                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'ojt' ? 'bg-blue-500 h-80' : 'bg-white h-72'}`}></Container>
-                                <Container className={`w-full`}>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'ojt' ? 'bg-blue-500 h-96' : 'bg-white h-72'}`}></Container>
+                                <Container className={`w-full h-96`}>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${(animate || hoveredExp!='ojt') ? '' : ' -translate-x-5 opacity-0'} transition-all`}>
                                         <span> Full Stack Developer </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${(animate || hoveredExp!='ojt')  ? '' : ' -translate-x-5 opacity-0'} transition-all`}>
                                         <span> Collaborated with a five-man team </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${(animate || hoveredExp!='ojt')  ? '' : ' -translate-x-5 opacity-0'} transition-all`}>
                                         <span> Parsed an excel sheet into usable data </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${(animate || hoveredExp!='ojt')  ? '' : ' -translate-x-5 opacity-0'} transition-all`}>
                                         <span> PHP, Laravel Framework and Relational database </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${(animate || hoveredExp!='ojt')  ? '' : ' -translate-x-5 opacity-0'} transition-all`}>
                                         <span> Responsible for the integration of the components created by the developers </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${(animate || hoveredExp!='ojt')  ? '' : ' -translate-x-5 opacity-0'} transition-all`}>
                                         <span> Successfully developed an SPRS within a month </span>
                                     </Text>
+                                    <Container className={`mt-7 ml-12 flex w-full space-x-8`} hide={hoveredExp != 'ojt' || (hoveredExp == 'ojt' && project == null)}>
+                                        <DynamicLogos className={`w-24 h-24 transition-all ${animate ? '' : ' -translate-x-5 opacity-0'}`} tags={tags}></DynamicLogos>
+                                    </Container>
                                 </Container>
                             </Container>
                         </Container>
                         {/* Projects */}
                         <Container className={`flex-[1_1_0%] flex items-center justify-center space-x-10`}>
-                            <Container className={`bg-[url('/images/projects/owwa1.png')] bg-contain bg-no-repeat bg-center w-[35rem] h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                            <Container  onMouseEnter={()=>handleProjectHoverEnter('owwa',['laravel','html','css','js','sql'])} onMouseLeave={handleProjectHoverLeave} className={`bg-[url('/images/projects/owwa1.png')] bg-contain bg-no-repeat bg-center w-[35rem] h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
                         </Container>
                     </Container>
 
@@ -302,35 +324,44 @@ export default function Page() {
                                 </Text>
                             </Container>
                             <Container className={`flex items-center`}>
-                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'freelance' ? 'bg-blue-500 h-80' : 'bg-white h-72'}`}></Container>
-                                <Container className={`w-full`}>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'freelance' ? 'bg-blue-500 h-96' : 'bg-white h-72'}`}></Container>
+                                <Container className={`w-full h-96`}>
+                                    <Text  hide={hoveredExp == 'freelance' && project && project!='comlab'} className={`${(animate || hoveredExp!='freelance')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
                                         <span> Built a laboratory monitoring system based on QR Scanning using the Flutter Framework and a Relational Database</span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
-                                        <span> Assisted on the stylization of a Clinic Management System using CSS and resolved bugs found in the system.</span>
+                                    <Text  hide={hoveredExp == 'freelance' && project && project!='clinic'} className={`${(animate || hoveredExp!='freelance')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Assisted on the stylization of a Clinic Management System using CSS and resolved bugs found in the backend of the system.</span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                    <Text  hide={hoveredExp == 'freelance' && project && project!='finance'} className={`${(animate || hoveredExp!='freelance')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
                                         <span> Assisted with a Finance Assistant mobile application, creating charts for monitoring expenses and integrating AI to generate recommendations for the given insights. </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                    <Text  hide={hoveredExp == 'freelance' && project && project!='lms'} className={`${(animate || hoveredExp!='freelance')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
                                         <span> Backend Developer for an LMS Project using Angular, PostgreSQL, and NodeJS. </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                    <Text  hide={hoveredExp == 'freelance' && project && project!='lms'} className={`${(animate || hoveredExp!='freelance')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Implemented websockets and API using NodeJS and PHP. </span>
+                                    </Text>
+                                    <Text  hide={hoveredExp == 'freelance' && project && project!='lms'} className={`${(animate || hoveredExp!='freelance')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                        <span> Integrated VideoSDK API for realtime video and audio communication. </span>
+                                    </Text>
+                                    <Text  hide={hoveredExp == 'freelance' && project && project!='lms'} className={`${(animate || hoveredExp!='freelance')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
                                         <span> Created an AWS Cloud Service for the LMS development team and Google Cloud Instance for deployment. </span>
                                     </Text>
+                                    <Container className={` ml-12 flex w-full space-x-8 flex-wrap`} hide={hoveredExp != 'freelance' || (hoveredExp == 'freelance' && project == null)}>
+                                        <DynamicLogos className={`mt-6 w-24 h-24 transition-all ${animate ? '' : ' -translate-x-5 opacity-0'}`} tags={tags}></DynamicLogos>
+                                    </Container>
                                 </Container>
                             </Container>
                         </Container>
                        
 
                        {/* Projects */}
-                       <Container className={`flex-[1_1_0%] flex items-center justify-center space-x-10`}>
-                            <Container className={`bg-[url('/images/projects/comlab1.jpg')] bg-contain bg-no-repeat bg-center w-40 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all `} />
-                            <Container className={`bg-[url('/images/projects/finance1.jpg')] bg-contain bg-no-repeat bg-center w-36 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                       <Container className={`flex-[1_1_0%] flex items-center flex-shrink-0 justify-center space-x-10`}>
+                            <Container onMouseEnter={()=>handleProjectHoverEnter('comlab',['flutter','sql','firebase'])} onMouseLeave={handleProjectHoverLeave}  className={`bg-[url('/images/projects/comlab1.jpg')] bg-contain bg-no-repeat bg-center w-40 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all `} />
+                            <Container onMouseEnter={()=>handleProjectHoverEnter('finance',['flutter'])} onMouseLeave={handleProjectHoverLeave}  className={`bg-[url('/images/projects/finance1.jpg')] bg-contain bg-no-repeat bg-center w-36 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
                             <Container className={`flex flex-col`}>
-                                <Container className={`bg-[url('/images/projects/clinic1.png')] bg-contain bg-no-repeat bg-center w-80 h-[12rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
-                                <Container className={`bg-[url('/images/projects/lms1.png')] bg-contain bg-no-repeat bg-center w-80 h-[12rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                                <Container onMouseEnter={()=>handleProjectHoverEnter('clinic',['css','php'])} onMouseLeave={handleProjectHoverLeave}  className={`bg-[url('/images/projects/clinic1.png')] bg-contain bg-no-repeat bg-center w-80 h-[12rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                                <Container onMouseEnter={()=>handleProjectHoverEnter('lms',['angular','nodejs', 'aws', 'sql','googlecloud','html','tailwind','ts'])} onMouseLeave={handleProjectHoverLeave}  className={`bg-[url('/images/projects/lms1.png')] bg-contain bg-no-repeat bg-center w-80 h-[12rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
                             </Container>
                         </Container>
                     </Container>
@@ -346,30 +377,33 @@ export default function Page() {
                                 </Text>
                             </Container>
                             <Container className={`flex items-center`}>
-                            <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'upward' ? 'bg-blue-500 h-80' : 'bg-white h-48'}`}></Container>
-                                <Container className={`w-full`}>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                            <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'upward' ? 'bg-blue-500 h-96' : 'bg-white h-72'}`}></Container>
+                                <Container className={`w-full h-96`}>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${(animate || hoveredExp!='upward')  ? '' : ' -translate-x-5 opacity-0'} transition-all`}>
                                         <span> Worked with an E-commerce system with Rider, Client and BOP side </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${(animate || hoveredExp!='upward')  ? '' : ' -translate-x-5 opacity-0'} transition-all`}>
                                         <span> Angular, Ionic, and Firebase  </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
-                                        <span> Resolved 30+ issues for the E-commerce mobile application </span>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${(animate || hoveredExp!='upward')  ? '' : ' -translate-x-5 opacity-0'} transition-all`}>
+                                        <span> Resolved 50+ issues for the E-commerce mobile application </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${(animate || hoveredExp!='upward')  ? '' : ' -translate-x-5 opacity-0'} transition-all`}>
                                         <span> Used Google Maps API and implemented visual navigation for the Rider app </span>
                                     </Text>
-                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
-                                        <span> Parsed an excel sheet containing 1000+ product entries, including their variants into uploadable data</span>
+                                    <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${(animate || hoveredExp!='upward')  ? '' : ' -translate-x-5 opacity-0'} transition-all`}>
+                                        <span> Parsed an excel sheet containing 1700+ product entries, including their variants into uploadable data</span>
                                     </Text>
+                                    <Container className={`mt-7 ml-12 flex w-full space-x-8`} hide={hoveredExp != 'upward' || (hoveredExp == 'upward' && project == null)}>
+                                        <DynamicLogos className={`w-24 h-24 transition-all ${animate ? '' : ' -translate-x-5 opacity-0'}`} tags={tags}></DynamicLogos>
+                                    </Container>
                                 </Container>
                             </Container>
                         </Container>
                         <Container className={`flex-[1_1_0%] flex items-center justify-center space-x-10`}>
-                            <Container className={`bg-[url('/images/projects/ecom1.jpg')] bg-contain bg-no-repeat bg-center w-40 h-96 opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
-                            <Container className={`bg-[url('/images/projects/ecom2.jpg')] bg-contain bg-no-repeat bg-center w-36 h-96 opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
-                            <Container className={`bg-[url('/images/projects/ecom3.jpg')] bg-contain bg-no-repeat bg-center w-32 h-96 opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                            <Container onMouseEnter={()=>handleProjectHoverEnter('ecom',['angular','firebase'])} onMouseLeave={handleProjectHoverLeave} className={`bg-[url('/images/projects/ecom1.jpg')] bg-contain bg-no-repeat bg-center w-40 h-96 opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                            <Container onMouseEnter={()=>handleProjectHoverEnter('ecom',['angular','firebase'])} onMouseLeave={handleProjectHoverLeave} className={`bg-[url('/images/projects/ecom2.jpg')] bg-contain bg-no-repeat bg-center w-36 h-96 opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                            <Container onMouseEnter={()=>handleProjectHoverEnter('ecom',['angular','firebase'])} onMouseLeave={handleProjectHoverLeave} className={`bg-[url('/images/projects/ecom3.jpg')] bg-contain bg-no-repeat bg-center w-32 h-96 opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
                         </Container>
                     </Container>
 
