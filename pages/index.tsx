@@ -449,7 +449,7 @@ export default function Page() {
                             <span>DROP ME A MESSAGE</span>    
                             <FaInbox className={'mt-1'}/>
                         </Text>
-                        <Container className={`flex w-full mt-2 gap-3`}>
+                        <Container className={`flex w-full mt-4 gap-3`}>
                             <Container className={`flex-[1_1_0%]`}>
                                 <Container className={`w-full`}>
                                     <Text className={`text-lg font-medium text-gray-800`}> Name </Text>
