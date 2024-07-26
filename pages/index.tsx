@@ -228,7 +228,7 @@ export default function Page() {
                 </Container>
             </Container>
             {/* Experiences */}
-            <Container id='experience' className={`flex bg-gradient-to-r mb-5 from-black via-black to-indigo-950 `}>
+            <Container id='experience' className={`flex bg-gradient-to-r from-black via-black to-indigo-950 `}>
                 <Container className={`flex-[1_1_0%] w-full pt-12 px-12 mt-5 `}>
                     <Text className={`ml-5 text-4xl text-orange-300`}>Experiences.</Text>
                     {/* Exp 0 */}
