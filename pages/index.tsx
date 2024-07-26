@@ -480,7 +480,7 @@ export default function Page() {
                 <Text className={`ml-5 text-8xl w-full flex justify-center text-white select-none cursor-pointer hover:animate-bounce hover:text-red-300 transition-all`}>I LOVE YOU KHRISTINE HEART AZUL</Text>
             </Container> */}
             <Container className={`bg-blue-500 text-white/70 h-5 w-full flex justify-end px-2 text-sm`}>
-                @ 2024 Kenneth James Belga. All riights reserved.
+                @ 2024 All rights reserved.
             </Container>
         </Container>
     </Base>
