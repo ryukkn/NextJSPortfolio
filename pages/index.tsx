@@ -9,10 +9,11 @@ import Icon from "@/components/Icon"
 import Collapsable from "@/components/Collapsable"
 import InputField from "@/components/InputField"
 import DynamicLogos from "@/components/DynamicLogos"
+import Button from '@/components/Button'
 
 import React, { useState, useEffect} from 'react';
 
-import { FaGithub,FaFacebook,FaLinkedin,FaQuoteLeft, FaQuoteRight, FaRegDotCircle, FaPhone, FaEnvelope  } from "react-icons/fa";
+import { FaGithub,FaFacebook,FaLinkedin,FaQuoteLeft, FaQuoteRight, FaRegDotCircle, FaPhone, FaEnvelope, FaPaperPlane, FaArrowRight, FaInbox  } from "react-icons/fa";
 
 
 export default function Page() {
@@ -20,7 +21,7 @@ export default function Page() {
     const iconContents = new Map<String,any>([
         ['angular' , <p key={'angular'}>I've used the <span className=" text-blue-600">Angular Framework</span> for the development of a web-based LMS Project and an E-commerce mobile app built with Ionic.</p>],
         ['flutter' , <p key={'flutter'}>For rapid mobile development, I have used the <span className=" text-blue-600">Flutter Framework</span>, integrating machine-learning models, relational and non-relational databases.</p>],
-        ['laravel' , <p key={'laravel'}>Full Stack developer for a Statistical Performance Reporting System for OWWA-R5 using the <span className=" text-blue-600"> Laravel Framework </span>.</p>],
+        ['laravel' , <p key={'laravel'}>Full stack developer for a Statistical Performance Reporting System for OWWA-R5 using the <span className=" text-blue-600"> Laravel Framework </span>.</p>],
         ['next' , <p  key={'next'}>This portfolio was built with <span className=" text-blue-600">NextJS</span>.</p>],
         ['nodejs' , <p  key={'nodejs'}>I have used <span className=" text-blue-600">NodeJS</span> to implement server-side file handling, as well as web sockets for real-time communication between the end users.</p>],
         ['firebase' , <p  key={'firebase'}>I have used <span className="text-blue-600">Firebase</span> as a non-relational database and ready to use websocket for mobile application projects.</p>],
@@ -125,16 +126,16 @@ export default function Page() {
     return <Base id='home'>
         <Header/>
         {/* Section 1*/}
-        <Container  className="h-5/6 w-full bg-white flex justify-around bg-[url('/images/background.avif')]" >
+        <Container  className="h-[90%] w-full bg-white flex justify-around bg-[url('/images/background.avif')]" >
             <Container className='relative flex-[3_3_0%] flex justify-center items-center flex-col'>
                 <Container className={`-mt-5 absolute bg-[url('/images/leaves.png')] w-full h-full bg-repeat-x z-10 pointer-events-none contrast-125 brightness-75`}></Container>
-                <Profile className='ml-40 xl:w-72 xl:h-72 2xl:w-96 2xl:h-96 scale-150 transition-all'/>
+                <Profile className='ml-40 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 scale-150 transition-all'/>
             </Container>
             <Container className='flex-[5_5_0%] flex flex-col relative'>
                 <Container className={`-mt-5 absolute bg-[url('/images/leaves.png')] w-full h-full bg-repeat-x z-10 pointer-events-none filter contrast-125 brightness-75`}></Container>
                 <Container hide={content != null || !collapsed} className='flex flex-col flex-[4_4_0%] justify-center items-center relative'>
-                    <Text className={`text-black font-thin xl:text-3xl 2xl:text-5xl 2xl:mb-4 xl:mb-1 select-none transition-all`}> <span className={`transition-all delay-500 ${animate ? 'text-blue-600' : 'text-blue-black'}`}>Hi!</span> <span className='text-blue-900'> I'm Kenneth James Belga </span></Text>
-                    <Text onMouseEnter={handleStackHoverEnter} onMouseLeave={handleStackHoverLeave}  onClick={toggleCollapse} className={`text-black xl:text-3xl 2xl:text-5xl select-none cursor-pointer hover:text-white hover:bg-black pt-1 pb-2 hover:px-16 hover:shadow-xl shadow-blue-600 rounded-lg transition-all ${animate ? '': ''}`}> 
+                    <Text className={`text-black font-thin xl:text-4xl 2xl:text-5xl 2xl:mb-4 xl:mb-1 select-none transition-all`}> <span className={`transition-all delay-500 ${animate ? 'text-blue-600' : 'text-blue-black'}`}>Hi!</span> <span className='text-blue-900'> I'm Kenneth James Belga </span></Text>
+                    <Text onMouseEnter={handleStackHoverEnter} onMouseLeave={handleStackHoverLeave}  onClick={toggleCollapse} className={`text-black xl:text-4xl 2xl:text-5xl select-none cursor-pointer hover:text-white hover:bg-black from-blue-700 via-blue-500 to-indigo-500 pt-1 pb-2 hover:px-16 hover:shadow-xl shadow-blue-600 rounded-lg transition-all ${animate ? '': ''}`}> 
                         <span>FULL STACK DEVELOPER</span> 
                     </Text>
                     <Tray className='w-full justify-center space-x-4 2xl:mt-3 xl:mt-2'>
@@ -142,7 +143,7 @@ export default function Page() {
                             <FaFacebook  onClick={()=>handleExternalLink('https://www.facebook.com/kennethjames.belga')} className={`text-black xl:text-4xl 2xl:text-5xl cursor-pointer hover:scale-125 hover:text-blue-900  transition-all ${animate ? ' ' : 'translate-y-14'}`} />
                             <FaLinkedin  onClick={()=>handleExternalLink('https://www.linkedin.com/in/kenneth-james-belga-438004312/')}  className={`text-black xl:text-4xl 2xl:text-5xl cursor-pointer hover:scale-125 hover:text-blue-900  transition-all ${animate ? '' : 'translate-y-20'}`}   />
                     </Tray>
-                    <Text hide={!hovering} className='text-black text-lg font-thin animate-pulse mt-60 absolute'>Click to open tech stack ...</Text>
+                    <Text hide={!hovering} className='text-blue-600 text-lg font-thin animate-pulse mt-60 absolute'>Click to open tech stack ...</Text>
                 
                 </Container>
                 <Container hide={content != null || collapsed} className='flex flex-col flex-[3_3_0%] justify-around items-center'>
@@ -197,32 +198,38 @@ export default function Page() {
             </Container>
         </Container>
         {/* Section 2 & 3 & 4*/}
-        <Container id='about' className='h-[250vh] w-full pl-10 relative'>
+        <Container id='about' className='h-[250vh] w-full  relative transition-all bg-blue'>
             {/* About Me */}
-            <Container className={`flex`}>
-                {/* <Container className={`absolute bg-[url('/images/leaves3.png')] w-52 h-52 bg-contain right-0`}></Container>
-                <Container className={`absolute bg-[url('/images/leaves3.png')] w-52 h-52 bg-contain right-[38%] top-[23%]`}></Container> */}
-                <Container className={`flex-[1_1_0%] pt-32 w-full h-64 flex flex-items-center`}>
+            <Container className={`flex items-center pl-10 bg-gradient-to-r from-black via-black to-indigo-950` }>
+                <Container className={`flex-1 pt-32 w-full h-full  flex flex-items-center relative`}>
+                    <Container className={`absolute bg-[url('/images/leaves3.png')] w-52 h-52 left-[38%] bg-contain top-[-30%]`}></Container>
+                    <Container className={`absolute bg-[url('/images/leaves3.png')] w-52 h-52 bg-contain right-0 max-[1535px]:bottom-[-45%] bottom-[-30%]`}></Container>
+                    <Container className={`absolute bg-[url('/images/leaves3.png')] w-52 h-52 bg-contain left-0 max-[1535px]:bottom-[-45%] bottom-[-30%]`}></Container>
+                    <Text className={`hover:animate-none cursor-pointer hover:text-orange-300  h-full text-white font-thin xl:text-2xl 2xl:text-4xl mb-10 select-none flex-[1_1_0%] flex text-center justify-center items-center flex-col transition-all`}>
+                        <span className='mb-4 text-sm'> <FaQuoteLeft/> </span>
+                        <span className=''> Let my actions always reflect the true essence of who I am.</span>
+                        <span className="mt-5 text-sm"> <FaQuoteRight/> </span>
+                    </Text>
                 </Container>
-                <Container className={`flex-[1_1_0%] pt-32 px-12`}>
+                <Container className={`flex-1 pt-32 px-12 h-full`}>
                     <Text className={`ml-5 text-4xl text-orange-300`}>About Me.</Text>
-                    <Text className={`mt-5 ml-5 text-lg font-thin`}>
+                    <Text className={`mt-5 ml-5 text-lg`}>
                         <span>Hello! I am a fresh graduate from <span className={`text-blue-400 font-normal`}>Bicol University</span> looking for an entry-level job as a <span className={`text-blue-400 font-normal`}>Full Stack Developer</span>. </span>
                         <span>I graduated with a <span className={`text-blue-400 font-normal`}>Computer Science Degree</span> and I am ready to use my knowledge to solve real-world problems in the stated field. </span>
                         <span>Throughout my academic journey, I pursued additional projects beyond my curriculum, which contributed to the refinement of my skills as a developer. </span>
-                        <span>From software engineering projects, my On-the-Job Training, and freelancing, to getting my provisional contract as a Junior Software Engineer, I have gained enough experience to fulfill my duties as a full-fledged developer. </span>
+                        <span>From software engineering projects, my On-the-Job Training, freelancing, to getting my provisional contract as a Junior Software Engineer, I have gained enough experience to fulfill my duties as a full-fledged developer. </span>
                         <span>Throughout this journey, I developed the sense of flexibility to engage both sides of Backend and Front-End Development. </span>
                     </Text>
                     <Text className={`mt-5 ml-5 text-lg`}>
-                        <span>I am looking forward to offering my services as a <span className={`text-blue-400 font-normal`}>full stack developer </span>to contribute to more projects, as well as to my future teams. </span>
+                        <span>I am looking forward to offering my services as a <span className={`text-blue-400 font-normal`}>Full Stack Developer </span>to contribute to more projects, as well as to my future teams. </span>
                         <span>Aside from my goal to improve the ways of life through the continuous development of our technologies, I am also dedicated to <span className={`text-blue-400 font-normal`}>sharing my knowledge in order to guide and lead my colleagues</span>. </span>
                         <span>I consider these goals as a motivation for continuous growth, a never-ending learning process that will keep improving my soft and technical skills.</span>
                     </Text>
                 </Container>
             </Container>
             {/* Experiences */}
-            <Container id='experience' className={`flex mt-5`}>
-                <Container className={`flex-[1_1_0%] w-full pt-12 px-12`}>
+            <Container id='experience' className={`flex bg-gradient-to-r mb-5 from-black via-black to-indigo-950 `}>
+                <Container className={`flex-[1_1_0%] w-full pt-12 px-12 mt-5 `}>
                     <Text className={`ml-5 text-4xl text-orange-300`}>Experiences.</Text>
                     {/* Exp 0 */}
                     <Container id='projects' className={`exp flex mt-5 ml-5 cursor-pointer select-none transition-all`} onMouseEnter={handleExpHoverEnter} onMouseLeave={handleExpHoverLeave}>
@@ -234,8 +241,8 @@ export default function Page() {
                                 </Text>
                             </Container>
                             <Container className={`flex items-center`}>
-                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'projects' ? 'bg-blue-500 h-96' : 'bg-white h-72'}`}></Container>
-                                <Container className={`w-full h-96`}>
+                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'projects' ? 'bg-blue-500 max-[1520px]:h-[30rem] h-96' : 'bg-white max-[1520px]:h-[28rem] h-72'}`}></Container>
+                                <Container className={`w-full h-96  max-[1520px]:h-[30rem]`}>
                                     <Text hide={hoveredExp == 'projects' && project && project!='lichen'} className={`${(animate || hoveredExp!='projects')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${hoveredExp == 'projects' && project && project !='lichen' ? 'text-orange-300' : ''}`}>
                                         <span> Developed a machine learning model for detecting three types of lichen planus skin rash. </span>
                                     </Text>
@@ -257,11 +264,10 @@ export default function Page() {
                                     <Text hide={hoveredExp == 'projects' && project && project!='abaca'}  className={`${(animate || hoveredExp!='projects')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
                                         <span> Also created interfaces for the Abaca Fiber Grade Classifier (Undergraduate Thesis). </span>
                                     </Text>
-                                    <Container className={`mt-7 ml-12 flex w-full space-x-8`} hide={hoveredExp != 'projects' || (hoveredExp == 'projects' && project == null)}>
-                                        <DynamicLogos className={`w-24 h-24 transition-all ${animate ? '' : ' -translate-x-5 opacity-0'}`} tags={tags}></DynamicLogos>
+                                    <Container className={`mt-5 ml-7 flex flex-wrap flex-shrink-0 w-full pr-4 gap-5 px-5`} hide={hoveredExp != 'projects' || (hoveredExp == 'projects' && project == null)}>
+                                        <DynamicLogos className={` max-[1310px]:w-20 max-[1310px]:h-20 w-24 h-24 mt-2 transition-all flex justify-center ${animate ? '' : ' -translate-x-5 opacity-0'}`} tags={tags}></DynamicLogos>
                                     </Container>
                                 </Container>
-                                
                             </Container>
                       
                         </Container>
@@ -282,8 +288,8 @@ export default function Page() {
                                 </Text>
                             </Container>
                             <Container className={`flex items-center`}>
-                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'ojt' ? 'bg-blue-500 h-96' : 'bg-white h-72'}`}></Container>
-                                <Container className={`w-full h-96`}>
+                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'ojt' ? 'bg-blue-500 max-[1520px]:h-[30rem] h-96' : 'bg-white max-[1520px]:h-[28rem] h-72'}`}></Container>
+                                <Container className={`w-full h-96 max-[1520px]:h-[30rem] pr-2`}>
                                     <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${(animate || hoveredExp!='ojt') ? '' : ' -translate-x-5 opacity-0'} transition-all`}>
                                         <span> Full Stack Developer </span>
                                     </Text>
@@ -302,8 +308,8 @@ export default function Page() {
                                     <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${(animate || hoveredExp!='ojt')  ? '' : ' -translate-x-5 opacity-0'} transition-all`}>
                                         <span> Successfully developed an SPRS within a month </span>
                                     </Text>
-                                    <Container className={`mt-7 ml-12 flex w-full space-x-8`} hide={hoveredExp != 'ojt' || (hoveredExp == 'ojt' && project == null)}>
-                                        <DynamicLogos className={`w-24 h-24 transition-all ${animate ? '' : ' -translate-x-5 opacity-0'}`} tags={tags}></DynamicLogos>
+                                    <Container className={`mt-5 ml-7 flex flex-wrap flex-shrink-0 w-full pr-4 gap-5 px-5`} hide={hoveredExp != 'ojt' || (hoveredExp == 'ojt' && project == null)}>
+                                        <DynamicLogos className={` max-[1310px]:w-20 max-[1310px]:h-20 w-24 h-24 transition-all ${animate ? '' : ' -translate-x-5 opacity-0'}`} tags={tags}></DynamicLogos>
                                     </Container>
                                 </Container>
                             </Container>
@@ -324,8 +330,8 @@ export default function Page() {
                                 </Text>
                             </Container>
                             <Container className={`flex items-center`}>
-                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'freelance' ? 'bg-blue-500 h-96' : 'bg-white h-72'}`}></Container>
-                                <Container className={`w-full h-96`}>
+                                <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'freelance' ? 'bg-blue-500  max-[1520px]:h-[30rem]  max-[1310px]:h-[36rem] h-[30rem]' : 'bg-white max-[1310px]:h-[34rem] max-[1520px]:h-[28rem] h-[28rem]'}`}></Container>
+                                <Container className={`w-full h-[30rem] max-[1520px]:h-[30rem]  max-[1310px]:h-[36rem] pr-2`}>
                                     <Text  hide={hoveredExp == 'freelance' && project && project!='comlab'} className={`${(animate || hoveredExp!='freelance')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
                                         <span> Built a laboratory monitoring system based on QR Scanning using the Flutter Framework and a Relational Database</span>
                                     </Text>
@@ -347,8 +353,8 @@ export default function Page() {
                                     <Text  hide={hoveredExp == 'freelance' && project && project!='lms'} className={`${(animate || hoveredExp!='freelance')  ? '' : ' -translate-x-5 opacity-0'} transition-all mt-2 ml-12 text-lg font-thin hover:text-orange-300`}>
                                         <span> Created an AWS Cloud Service for the LMS development team and Google Cloud Instance for deployment. </span>
                                     </Text>
-                                    <Container className={` ml-12 flex w-full space-x-8 flex-wrap`} hide={hoveredExp != 'freelance' || (hoveredExp == 'freelance' && project == null)}>
-                                        <DynamicLogos className={`mt-6 w-24 h-24 transition-all ${animate ? '' : ' -translate-x-5 opacity-0'}`} tags={tags}></DynamicLogos>
+                                    <Container className={`mt-2 ml-4 flex flex-wrap flex-shrink-0 w-full gap-5 px-5`} hide={hoveredExp != 'freelance' || (hoveredExp == 'freelance' && project == null)}>
+                                        <DynamicLogos className={`mt-5  max-[1310px]:w-20 max-[1310px]:h-20   w-24 h-24 transition-all ${animate ? '' : ' -translate-x-5 opacity-0'}`} tags={tags}></DynamicLogos>
                                     </Container>
                                 </Container>
                             </Container>
@@ -356,12 +362,14 @@ export default function Page() {
                        
 
                        {/* Projects */}
-                       <Container className={`flex-[1_1_0%] flex items-center flex-shrink-0 justify-center space-x-10`}>
-                            <Container onMouseEnter={()=>handleProjectHoverEnter('comlab',['flutter','sql','firebase'])} onMouseLeave={handleProjectHoverLeave}  className={`bg-[url('/images/projects/comlab1.jpg')] bg-contain bg-no-repeat bg-center w-40 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all `} />
-                            <Container onMouseEnter={()=>handleProjectHoverEnter('finance',['flutter'])} onMouseLeave={handleProjectHoverLeave}  className={`bg-[url('/images/projects/finance1.jpg')] bg-contain bg-no-repeat bg-center w-36 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
-                            <Container className={`flex flex-col`}>
-                                <Container onMouseEnter={()=>handleProjectHoverEnter('clinic',['css','php'])} onMouseLeave={handleProjectHoverLeave}  className={`bg-[url('/images/projects/clinic1.png')] bg-contain bg-no-repeat bg-center w-80 h-[12rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
-                                <Container onMouseEnter={()=>handleProjectHoverEnter('lms',['angular','nodejs', 'aws', 'sql','googlecloud','html','tailwind','ts'])} onMouseLeave={handleProjectHoverLeave}  className={`bg-[url('/images/projects/lms1.png')] bg-contain bg-no-repeat bg-center w-80 h-[12rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                       <Container className={`flex-[1_1_0%] flex  items-center flex-shrink-0 justify-center space-x-2`}>
+                            <Container className={'flex space-x-2'}>
+                                <Container onMouseEnter={()=>handleProjectHoverEnter('comlab',['flutter','sql','firebase'])} onMouseLeave={handleProjectHoverLeave}  className={`bg-[url('/images/projects/comlab1.jpg')] bg-contain bg-no-repeat bg-center w-40 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all `} />
+                                <Container onMouseEnter={()=>handleProjectHoverEnter('finance',['flutter'])} onMouseLeave={handleProjectHoverLeave}  className={`bg-[url('/images/projects/finance1.jpg')] bg-contain bg-no-repeat bg-center w-36 h-[22rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                            </Container>
+                            <Container className={`flex flex-col space-y-2`}>
+                                <Container onMouseEnter={()=>handleProjectHoverEnter('clinic',['css','php'])} onMouseLeave={handleProjectHoverLeave}  className={`bg-[url('/images/projects/clinic1.png')] bg-contain bg-no-repeat bg-center w-80 h-[10rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
+                                <Container onMouseEnter={()=>handleProjectHoverEnter('lms',['angular','nodejs', 'aws', 'sql','googlecloud','html','tailwind','ts'])} onMouseLeave={handleProjectHoverLeave}  className={`bg-[url('/images/projects/lms1.png')] bg-contain bg-no-repeat bg-center w-80 h-[10rem] opacity-70 hover:opacity-100 hover:scale-105 transition-all`} />
                             </Container>
                         </Container>
                     </Container>
@@ -377,8 +385,8 @@ export default function Page() {
                                 </Text>
                             </Container>
                             <Container className={`flex items-center`}>
-                            <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'upward' ? 'bg-blue-500 h-96' : 'bg-white h-72'}`}></Container>
-                                <Container className={`w-full h-96`}>
+                            <Container className={`w-0.5 ml-1.5 opacity-50 transition-all   ${hoveredExp == 'upward' ? 'bg-blue-500 max-[1520px]:h-[30rem] h-96' : 'bg-white max-[1520px]:h-[28rem] h-72'}`}></Container>
+                                <Container className={`w-full max-[1520px]:h-[30rem] h-96`}>
                                     <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${(animate || hoveredExp!='upward')  ? '' : ' -translate-x-5 opacity-0'} transition-all`}>
                                         <span> Worked with an E-commerce system with Rider, Client and BOP side </span>
                                     </Text>
@@ -394,7 +402,7 @@ export default function Page() {
                                     <Text className={`mt-2 ml-12 text-lg font-thin hover:text-orange-300 ${(animate || hoveredExp!='upward')  ? '' : ' -translate-x-5 opacity-0'} transition-all`}>
                                         <span> Parsed an excel sheet containing 1700+ product entries, including their variants into uploadable data</span>
                                     </Text>
-                                    <Container className={`mt-7 ml-12 flex w-full space-x-8`} hide={hoveredExp != 'upward' || (hoveredExp == 'upward' && project == null)}>
+                                    <Container className={`mt-5 ml-4 flex flex-wrap flex-shrink-0 w-full pr-4 gap-5 px-5`} hide={hoveredExp != 'upward' || (hoveredExp == 'upward' && project == null)}>
                                         <DynamicLogos className={`w-24 h-24 transition-all ${animate ? '' : ' -translate-x-5 opacity-0'}`} tags={tags}></DynamicLogos>
                                     </Container>
                                 </Container>
@@ -411,51 +419,68 @@ export default function Page() {
 
             </Container>
             {/* Contacts */}
-            <Container className={` pt-24 px-12`}>
-                <Text className={`ml-5 text-8xl w-full flex justify-center text-white select-none cursor-pointer hover:animate-bounce`}>I LOVE YOU KHRISTINE HEART AZUL</Text>
-            </Container>
-            <Container  id='contact' className={` pt-24 px-12`}>
-                <Text className={`ml-5 text-4xl text-orange-300`}>Contact.</Text>
+
+            <Container  id='contact' className={` pt-20 px-12 bg-white from-blue-700 via-blue-500 to-indigo-500 select-none`}>
                 <Container className={`flex justify-center w-full`}>
-                    <Container className={`flex flex-col flex-[2_2_0%]`}>
-                        <Container className={`flex items-center mt-10 ml-10 select-none cursor-pointer`}>
+                    <Container className={`flex flex-col flex-[1_1_0%]`}>
+                        <Text className={`ml-5 text-4xl font-medium text-gray-800`}>CONTACTS</Text>
+                        <Container className={`flex text-gray-800 items-center mt-5 ml-8 hover:text-blue-400 select-none cursor-pointer`}>
                             <FaPhone className={`scale-x-[-1]`}/>
-                            <Text className={`text-lg ml-5`}>
+                            <Text className={`text-lg ml-5 font-medium`}>
                                 <span>09957140344</span>
                             </Text>
                         </Container>
-                        <Container className={`flex items-center mt-5 ml-10 select-none cursor-pointer`}>
+                        <Container className={`flex text-gray-800 items-center mt-5 hover:text-blue-400 ml-8 select-none cursor-pointer`}>
                             <FaEnvelope className={`scale-x-[-1]`}/>
-                            <Text className={`text-lg ml-5`}>
+                            <Text className={`text-lg ml-5 font-medium`}>
                                 <span>kennethjbelga566@gmail.com</span>
                             </Text>
                         </Container>
-                        <Container className={`flex items-center mt-5 ml-10 select-none cursor-pointer`}>
+                        <Container className={`flex text-gray-800 items-center mt-5 ml-8 hover:text-blue-400 select-none cursor-pointer`}>
                             <FaFacebook/>
-                            <Text className={`text-lg ml-5`}>
+                            <Text className={`text-lg ml-5 font-medium`}>
                                 <span>kennethjames.belga</span>
                             </Text>
                         </Container>
                     </Container>
-
-                    <Container className={`flex-[3_3_0%] mr-36 mt-7 h-96`}>
-                        <Text className={`text-3xl`}>Drop me message </Text>
-                        <Container>
-                            <Container>
-                                <Text className={`text-lg mt-5`}> Name </Text>
-                                <InputField></InputField>
+                    <Container className={`w-0.5 h-32 bg-gray-400 rounded ml-5 mr-10 mt-10`}/>
+                    <Container className={`flex-[3_3_0%]  h-80 `}>
+                        <Text className={`text-4xl text-gray-800 font-medium flex gap-5 items-center`}>
+                            <span>DROP ME A MESSAGE</span>    
+                            <FaInbox className={'mt-1'}/>
+                        </Text>
+                        <Container className={`flex w-full mt-2 gap-3`}>
+                            <Container className={`flex-[1_1_0%]`}>
+                                <Container className={`w-full`}>
+                                    <Text className={`text-lg font-medium text-gray-800`}> Name </Text>
+                                    <InputField placeholder='Enter your name' className={`w-full `}></InputField>
+                                </Container>
+                                <Container className={`w-full`}>
+                                    <Text className={`text-lg font-medium text-gray-800 mt-1`}> Email </Text>
+                                    <InputField placeholder='Enter your email address' className={`w-full `}></InputField>
+                                </Container>
+                            
                             </Container>
-                            <Container>
-                                <Text className={`text-lg mt-5`}> Email </Text>
-                                <InputField></InputField>
+                            <Container className={`flex-[2_2_0%] items-end flex flex-col `}>
+                                <Container className={`w-full`}>
+                                    <Text className={`text-lg w-full text-gray-800 font-medium`}> Message </Text>
+                                    <InputField textarea={true} className={` h-[7.3rem] w-full `} placeholder='Enter your message'></InputField>
+                                </Container>
+                                <Button className={`mt-2`}>
+                                    <FaPaperPlane></FaPaperPlane>
+                                    <span className={`font-medium`}> Send </span>
+                                </Button>
                             </Container>
-                            <Container>
-                                <Text className={`text-lg mt-5`}> Message </Text>
-                                <InputField></InputField>
-                            </Container>
+                  
                         </Container>
                     </Container>
                 </Container>
+            </Container>
+            {/* <Container className={` pb-24 pt-10 px-12 bg-gradient-to-r from-blue-700 via-blue-500 to-indigo-500`}>
+                <Text className={`ml-5 text-8xl w-full flex justify-center text-white select-none cursor-pointer hover:animate-bounce hover:text-red-300 transition-all`}>I LOVE YOU KHRISTINE HEART AZUL</Text>
+            </Container> */}
+            <Container className={`bg-blue-500 text-white/70 h-5 w-full flex justify-end px-2 text-sm`}>
+                @ 2024 Kenneth James Belga. All riights reserved.
             </Container>
         </Container>
     </Base>
